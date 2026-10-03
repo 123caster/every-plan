@@ -6,11 +6,13 @@ describe('parseQuickSyntax', () => {
 
   it('extracts supported deterministic tokens', () => {
     const result = parseQuickSyntax('写周报 今天 14:30 #工作 !高 /45m', now);
+    const expectedPlanStart = new Date(now);
+    expectedPlanStart.setHours(14, 30, 0, 0);
     expect(result.title).toBe('写周报');
     expect(result.tags).toEqual(['工作']);
     expect(result.priority).toBe('high');
     expect(result.estimateMinutes).toBe(45);
-    expect(result.planStart).toContain('T06:30:00.000Z');
+    expect(result.planStart).toBe(expectedPlanStart.toISOString());
   });
 
   it('keeps ambiguous natural language in the title', () => {
