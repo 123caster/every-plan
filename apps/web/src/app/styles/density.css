@@ -1,0 +1,22 @@
+:root,
+:root[data-density='comfortable'] {
+  --control-height: 2.75rem;
+  --row-height: 3rem;
+  --content-gap: 1.5rem;
+  --card-padding: 1.5rem;
+}
+
+:root[data-density='compact'] {
+  --control-height: 2.5rem;
+  --row-height: 2.625rem;
+  --content-gap: 1rem;
+  --card-padding: 1.125rem;
+}
+
+:root[data-density='focus'] {
+  --control-height: 3rem;
+  --row-height: 3.25rem;
+  --content-gap: 2rem;
+  --card-padding: 2rem;
+}
+

@@ -1,0 +1,35 @@
+{
+  "id": "/",
+  "name": "Every Plan",
+  "short_name": "Every Plan",
+  "description": "个人任务、日历与可扩展插件工作台。",
+  "lang": "zh-CN",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "orientation": "any",
+  "background_color": "#0c110f",
+  "theme_color": "#101612",
+  "icons": [
+    {
+      "src": "/icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    },
+    {
+      "src": "/maskable-icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "maskable"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "打开技术验证",
+      "short_name": "技术验证",
+      "url": "/"
+    }
+  ]
+}
+

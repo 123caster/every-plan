@@ -1,0 +1,17 @@
+:root { font-size: 16px; }
+:root[data-font-scale='90'] { font-size: 14.4px; }
+:root[data-font-scale='100'] { font-size: 16px; }
+:root[data-font-scale='115'] { font-size: 18.4px; }
+:root[data-font-scale='130'] { font-size: 20.8px; }
+
+body {
+  font-family: var(--font-sans);
+  font-size: 1rem;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1 { font-size: clamp(2rem, 4vw, 3.6rem); line-height: 1.04; letter-spacing: -0.045em; }
+h2 { font-size: clamp(1.2rem, 2vw, 1.65rem); line-height: 1.2; letter-spacing: -0.025em; }
+small { font-size: 0.78rem; }
+

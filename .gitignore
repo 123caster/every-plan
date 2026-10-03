@@ -1,0 +1,12 @@
+node_modules/
+dist/
+dev-dist/
+*.tsbuildinfo
+coverage/
+playwright-report/
+test-results/
+artifacts/
+.vite/
+.DS_Store
+*.local
+*.log

@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-label="Every Plan">
+  <defs>
+    <linearGradient id="g" x1="96" y1="56" x2="416" y2="456" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#9bf0c3"/>
+      <stop offset="1" stop-color="#42bd84"/>
+    </linearGradient>
+  </defs>
+  <rect width="512" height="512" rx="128" fill="#101612"/>
+  <path d="M148 124h226v60H212v54h142v58H212v56h166v60H148V124Z" fill="url(#g)"/>
+  <circle cx="374" cy="138" r="26" fill="#f2f7f3"/>
+</svg>
+
