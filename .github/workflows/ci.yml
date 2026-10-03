@@ -35,4 +35,3 @@ jobs:
         run: pnpm build
       - name: Chrome and Edge smoke tests
         run: pnpm --filter web test:e2e:branded
-
