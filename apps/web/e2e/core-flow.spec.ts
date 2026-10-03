@@ -2,7 +2,7 @@ import { expect, test } from '@playwright/test';
 
 test('create, open, auto-save and complete a personal task across reloads', async ({ page }) => {
   await page.goto('/today');
-  await expect(page.getByRole('heading', { name: '今天', exact: true })).toBeVisible();
+  await expect(page.getByRole('main').getByRole('heading', { name: '今天', exact: true })).toBeVisible();
 
   await page.keyboard.press('Control+K');
   const dialog = page.getByRole('dialog', { name: '快速创建任务' });
