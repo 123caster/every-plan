@@ -1,21 +1,26 @@
-export type P0View = 'overview' | 'state' | 'calendar';
+import type { AppRoute } from '../app/router';
 
 interface IconRailProps {
-  activeView: P0View;
-  onViewChange: (view: P0View) => void;
+  activeView: AppRoute;
+  onViewChange: (view: AppRoute) => void;
+  onQuickCreate: () => void;
 }
 
-const navItems: Array<{ id: P0View; label: string; icon: string }> = [
-  { id: 'overview', label: '总览', icon: '◇' },
-  { id: 'state', label: '状态验证', icon: '✓' },
-  { id: 'calendar', label: '日历验证', icon: '▦' },
+const navItems: Array<{ id: AppRoute; label: string; icon: string }> = [
+  { id: 'today', label: '今天', icon: '✓' },
+  { id: 'calendar', label: '周日历', icon: '▦' },
+  { id: 'plugins', label: '插件', icon: '⬡' },
+  { id: 'appearance', label: '设置', icon: '⚙' },
 ];
 
-export function IconRail({ activeView, onViewChange }: IconRailProps) {
+export function IconRail({ activeView, onViewChange, onQuickCreate }: IconRailProps) {
   return (
     <nav className="icon-rail" aria-label="主导航">
       <div className="brand-mark" aria-label="Every Plan">E</div>
       <div className="icon-rail__items">
+        <button type="button" className="icon-rail__button icon-rail__button--create" aria-label="快速创建任务" onClick={onQuickCreate}>
+          <span aria-hidden="true">＋</span>
+        </button>
         {navItems.map((item) => (
           <button
             type="button"
@@ -33,4 +38,3 @@ export function IconRail({ activeView, onViewChange }: IconRailProps) {
     </nav>
   );
 }
-

@@ -15,10 +15,8 @@ describe('StateSpike', () => {
   it('saves a task, restores the form baseline and merges a server snapshot', async () => {
     const user = userEvent.setup();
     const saved: TaskRecord[] = [];
-    const repository: TaskRepository = {
-      list: async () => saved,
+    const repository: Pick<TaskRepository, 'save'> = {
       save: async (task) => { saved.push(task); },
-      get: async (id) => saved.find((task) => task.id === id),
     };
     render(<StateSpike store={createStateSpikeStore()} repository={repository} />, { wrapper });
 
@@ -36,7 +34,7 @@ describe('StateSpike', () => {
 
   it('undoes an unsaved edit', async () => {
     const user = userEvent.setup();
-    const repository: TaskRepository = { list: async () => [], save: async () => {}, get: async () => undefined };
+    const repository: Pick<TaskRepository, 'save'> = { save: async () => {} };
     render(<StateSpike store={createStateSpikeStore()} repository={repository} />, { wrapper });
     const title = screen.getByRole('textbox', { name: '任务标题' });
     await user.clear(title);

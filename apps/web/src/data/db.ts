@@ -11,6 +11,20 @@ export interface TaskRecord {
   planEnd: string | null;
   dueAt: string | null;
   updatedAt: string;
+  description?: string;
+  priority?: 'none' | 'low' | 'medium' | 'high';
+  listId?: string;
+  listName?: string;
+  tags?: string[];
+  allDayDate?: string | null;
+  dueDate?: string | null;
+  timezone?: string;
+  estimateMinutes?: number | null;
+  subtasks?: Array<{ id: string; title: string; completed: boolean }>;
+  order?: number;
+  version?: number;
+  createdAt?: string;
+  completedAt?: string | null;
 }
 
 export interface PreferenceRecord {
@@ -19,7 +33,7 @@ export interface PreferenceRecord {
   updatedAt: string;
 }
 
-interface MetaRecord {
+export interface MetaRecord {
   key: string;
   value: string;
 }

@@ -24,7 +24,7 @@ const initialValues: TaskFormValues = {
 
 interface StateSpikeProps {
   store?: StateSpikeStore;
-  repository?: TaskRepository;
+  repository?: Pick<TaskRepository, 'save'>;
 }
 
 const defaultStore = createStateSpikeStore();

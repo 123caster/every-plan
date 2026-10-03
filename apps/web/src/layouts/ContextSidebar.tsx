@@ -1,27 +1,31 @@
-import type { P0View } from './IconRail';
+import type { AppRoute } from '../app/router';
 
-const viewCopy: Record<P0View, { title: string; intro: string }> = {
-  overview: { title: '技术基线', intro: '主题、字号、密度和离线能力' },
-  state: { title: '任务状态切片', intro: '创建、编辑、撤销、本地保存和实体合并' },
-  calendar: { title: '周日历切片', intro: '可读布局、拖动、时长和键盘替代' },
+const viewCopy: Record<AppRoute, { title: string; intro: string }> = {
+  today: { title: '今天', intro: '把下一步行动放在最清晰的位置' },
+  calendar: { title: '周日历', intro: '用足够的空间看清时间与任务' },
+  plugins: { title: '插件中心', intro: '扩展能力，但不侵入任务核心' },
+  'plugin-import': { title: '导入插件', intro: '从本地包增加新能力' },
+  appearance: { title: '外观设置', intro: '主题、字号、密度和详情布局' },
+  foundation: { title: '技术基线', intro: '工程、PWA、本地数据与设计令牌' },
+  state: { title: '状态实验室', intro: '本地保存与实体合并验证' },
 };
 
-export function ContextSidebar({ activeView }: { activeView: P0View }) {
+export function ContextSidebar({ activeView }: { activeView: AppRoute }) {
   const copy = viewCopy[activeView];
   return (
     <aside className="context-sidebar">
       <div>
-        <span className="eyebrow">Every Plan / Batch A</span>
+        <span className="eyebrow">Every Plan / Personal</span>
         <h1>{copy.title}</h1>
         <p>{copy.intro}</p>
       </div>
       <div className="sidebar-section">
-        <span>本批次边界</span>
+        <span>个人工作台</span>
         <ul>
-          <li><i className="dot dot--ready" /> 工程、CI 与 PWA</li>
-          <li><i className="dot dot--ready" /> 本地数据库和偏好</li>
-          <li><i className="dot dot--ready" /> 日历技术验证</li>
-          <li><i className="dot" /> 业务页面（下一批）</li>
+          <li><i className="dot dot--ready" /> 今日任务与进度</li>
+          <li><i className="dot dot--ready" /> 计划和截止时间分离</li>
+          <li><i className="dot dot--ready" /> 本地自动保存</li>
+          <li><i className="dot" /> 可安装插件扩展区</li>
         </ul>
       </div>
       <div className="sidebar-note">
@@ -31,4 +35,3 @@ export function ContextSidebar({ activeView }: { activeView: P0View }) {
     </aside>
   );
 }
-

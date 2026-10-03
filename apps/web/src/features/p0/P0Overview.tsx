@@ -12,7 +12,7 @@ export function P0Overview() {
   return (
     <div className="overview-stack">
       <StatusBanner tone="success" title="批次 A 正在形成可持续演进的正式前端">
-        当前页面是技术基线，不伪装成完整 V1。业务闭环将在 P0 门禁通过后继续。
+        技术基线已通过，并已承载批次 B 的个人任务闭环；插件运行时和正式周日历仍属于后续批次。
       </StatusBanner>
 
       <section className="gate-grid" aria-label="P0 技术门禁">
@@ -32,4 +32,3 @@ export function P0Overview() {
     </div>
   );
 }
-

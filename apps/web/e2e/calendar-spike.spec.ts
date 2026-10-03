@@ -1,11 +1,11 @@
 import { expect, test } from '@playwright/test';
 
 test('130% text remains readable and the calendar supports keyboard and drag movement', async ({ page }) => {
-  await page.goto('/');
+  await page.goto('/settings/appearance');
   await page.getByRole('button', { name: '大字 130%' }).click();
   await expect(page.locator('html')).toHaveAttribute('data-font-scale', '130');
 
-  await page.getByRole('button', { name: '日历验证' }).first().click();
+  await page.getByRole('button', { name: '周日历' }).first().click();
   const task = page.getByRole('button', { name: /插件 API 评审/ });
   await expect(task).toBeVisible();
   const box = await task.boundingBox();
@@ -32,8 +32,8 @@ test('130% text remains readable and the calendar supports keyboard and drag mov
 });
 
 test('reduced motion keeps the core controls available', async ({ page }) => {
-  await page.goto('/');
+  await page.goto('/settings/appearance');
   await page.getByRole('button', { name: '减少' }).click();
   await expect(page.locator('html')).toHaveAttribute('data-motion', 'reduced');
-  await expect(page.getByRole('button', { name: '日历验证' }).first()).toBeVisible();
+  await expect(page.getByRole('button', { name: '周日历' }).first()).toBeVisible();
 });

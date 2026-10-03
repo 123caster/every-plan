@@ -3,6 +3,7 @@ import { SegmentedControl } from '../../design-system/primitives/SegmentedContro
 import { usePreferences } from '../../platform/preferences/preferenceStore';
 import type {
   DensityPreference,
+  DetailModePreference,
   FontScalePreference,
   MotionPreference,
   ResolvedTheme,
@@ -78,6 +79,15 @@ export function PreferencesPanel() {
             { value: 'reduced', label: '减少' },
           ]}
         />
+        <SegmentedControl<DetailModePreference>
+          label="任务详情布局"
+          value={preferences.detailMode}
+          onChange={(value) => void update('detailMode', value)}
+          options={[
+            { value: 'drawer', label: '右侧抽屉' },
+            { value: 'modal', label: '中央窗口' },
+          ]}
+        />
       </div>
 
       <div className="preference-panel__footer">
@@ -87,4 +97,3 @@ export function PreferencesPanel() {
     </section>
   );
 }
-

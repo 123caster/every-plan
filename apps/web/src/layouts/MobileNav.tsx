@@ -1,20 +1,24 @@
-import type { P0View } from './IconRail';
+import type { AppRoute } from '../app/router';
 
-const items: Array<{ id: P0View; label: string }> = [
-  { id: 'overview', label: '总览' },
-  { id: 'state', label: '任务验证' },
-  { id: 'calendar', label: '日历验证' },
+const items: Array<{ id: AppRoute; label: string }> = [
+  { id: 'today', label: '今天' },
+  { id: 'calendar', label: '日历' },
+  { id: 'plugins', label: '插件' },
+  { id: 'appearance', label: '设置' },
 ];
 
 export function MobileNav({
   activeView,
   onViewChange,
+  onQuickCreate,
 }: {
-  activeView: P0View;
-  onViewChange: (view: P0View) => void;
+  activeView: AppRoute;
+  onViewChange: (view: AppRoute) => void;
+  onQuickCreate: () => void;
 }) {
   return (
     <nav className="mobile-nav" aria-label="移动端主导航">
+      <button type="button" className="mobile-nav__create" aria-label="快速创建任务" onClick={onQuickCreate}>＋</button>
       {items.map((item) => (
         <button
           type="button"
@@ -26,4 +30,3 @@ export function MobileNav({
     </nav>
   );
 }
-
